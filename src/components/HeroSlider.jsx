@@ -142,7 +142,7 @@ const slides = [
 
 const HeroSlider = () => {
   return (
-  <section className="font-serif  w-full pt-[85px]  h-screen">
+  <section className="font-serif  w-full h-sreen">
       <Swiper
         modules={[EffectFade, Autoplay]}
         effect={"fade"}
