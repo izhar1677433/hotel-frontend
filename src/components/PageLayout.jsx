@@ -6,14 +6,13 @@ const PageLayout = ({
   subtitle, 
   heroImage, 
   className = "",
-  showHero = false,
-  maxWidth = "max-w-7xl"
+  showHero = false
 }) => {
   return (
-    <div className={`min-h-screen ${className}`}>
+    <div className={`min-h-screen w-full ${className}`}>
       {/* Hero Section */}
       {showHero && (
-        <section className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 py-20 lg:py-32">
+        <section className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 py-12 sm:py-16 md:py-20 lg:py-32 w-full">
           <div className="absolute inset-0 bg-black/50" />
           {heroImage && (
             <div 
@@ -21,13 +20,13 @@ const PageLayout = ({
               style={{ backgroundImage: `url(${heroImage})` }}
             />
           )}
-          <div className="relative z-10 mx-auto px-4 text-center lg:px-8">
-            <div className={maxWidth}>
-              <h1 className="mb-4 text-4xl font-bold text-white lg:text-6xl">
+          <div className="relative z-10 w-full px-4 sm:px-8 md:px-12 text-center">
+            <div className="max-w-4xl mx-auto">
+              <h1 className="mb-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white">
                 {title}
               </h1>
               {subtitle && (
-                <p className="mx-auto max-w-2xl text-lg text-gray-300 lg:text-xl">
+                <p className="mx-auto text-base sm:text-lg md:text-xl text-gray-300">
                   {subtitle}
                 </p>
               )}
@@ -37,8 +36,8 @@ const PageLayout = ({
       )}
 
       {/* Main Content */}
-      <main className="flex-1">
-        <div className={`mx-auto px-4 py-8 lg:px-8 lg:py-12 ${maxWidth}`}>
+      <main className="flex-1 w-full">
+        <div className="w-full px-2 sm:px-4 md:px-8 lg:px-16 xl:px-32 py-8 lg:py-12 max-w-screen-2xl mx-auto">
           {children}
         </div>
       </main>

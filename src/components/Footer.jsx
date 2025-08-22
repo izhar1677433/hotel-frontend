@@ -3,12 +3,12 @@ import { Icon } from "@iconify/react";
 
 const Footer = () => {
   return (
-    <footer className=" bg-gray-900 py-20 p-10 text-white min-h-full mt-[300px] ">
-      <div className="container mx-auto grid grid-cols-1 gap-8 px-4 md:grid-cols-4">
+    <footer className="bg-gray-900 py-10 px-4 text-white w-full mt-24">
+      <div className="max-w-screen-2xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         {/* Contact Section */}
         <div>
           <h3 className="mb-4 text-xl font-semibold">Contact Us</h3>
-          <p className="text-white">Email: royalheights@486.com</p>
+          <p className="text-white">Email: royalheights@486gmail.com</p>
           <p className="text-white">Phone: 03181677433</p>
           <p className="text-white">
             Address: Capital of Pakistan Islamabad
@@ -77,7 +77,7 @@ const Footer = () => {
           </button>
         </div>
       </div>
-      <div className="mt-20 text-center text-white">
+  <div className="mt-10 text-center text-white text-sm">
         <p>
           &copy; {new Date().getFullYear()} Hotel Booking System. All rights
           reserved.

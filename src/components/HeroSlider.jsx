@@ -151,7 +151,7 @@ const HeroSlider = () => {
           delay: 3000,
           disableOnInteraction: false,
         }}
-        className="heroSlider h-[320px] sm:h-[400px] md:h-[600px] lg:h-[860px]"
+        className="heroSlider h-[320px] sm:h-[400px] md:h-[600px] lg:h-[860px] "
       >
         {slides.map((slide, index) => {
           // destructure slide

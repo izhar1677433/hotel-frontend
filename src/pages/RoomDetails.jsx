@@ -120,7 +120,7 @@ const RoomDetails = () => {
   };
   console.log("image", image);
   return (
-    <section>
+    <section >
       <ScrollToTop />
 
       {/* room banner */}

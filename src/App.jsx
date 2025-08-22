@@ -9,6 +9,8 @@ import {
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ProtectedRoute from "./components/ProtectedRoute";
+import PageLayout from "./components/PageLayout";
+import HeroSlider from "./components/HeroSlider";
 
 // import pages
 import Home from "./pages/Home";
@@ -27,12 +29,14 @@ import Cancel from "./pages/Cancel";
 import Admin from "./components/Admin";
 import Adminlogin from "./components/Adminlogin";
 
-// Layout component that includes Header and Footer
+// Layout component that includes Header, Footer, and PageLayout
 const Layout = () => {
-  return ( 
+  return (
     <>
       <Header />
-      <Outlet />
+      <PageLayout>
+        <Outlet />
+      </PageLayout>
       <Footer />
     </>
   );
@@ -108,6 +112,7 @@ const router = createBrowserRouter([
 
   const App = () => {
     return (
+      
       <RouterProvider router={router} />
     );
   };
