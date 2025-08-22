@@ -21,7 +21,7 @@ const Header = () => {
     Navigate("/Login");
   };
   return (
-    <header className="header w-full">
+    <header className="header w-screen">
       <div
         className={`${header ? "py-3 shadow-lg" : "py-1"} fixed z-50 w-full bg-gray-900 text-white transition-all duration-500`}
       >
@@ -46,8 +46,8 @@ const Header = () => {
           <nav
             className={`${menuOpen ? "flex" : "hidden"} flex-col absolute top-full left-0 w-full bg-gray-900 lg:static lg:flex lg:flex-row lg:w-auto lg:bg-transparent z-40 transition-all duration-300`}
           >
-            <ul className="flex flex-col lg:flex-row items-center justify-center gap-x-2 gap-y-2 font-tertiary text-base sm:text-lg md:text-xl uppercase tracking-[1.5px] lg:gap-x-8 overflow-x-auto p-4 lg:p-0">
-              <a href="/" className="transition hover:text-accent px-2 py-1">Home</a>
+            <ul className="flex flex-col lg:flex-row items-center justify-center gap-x-6 text-xl gap-y-2 pr-[200px] ">
+              <a href="/" className="transition hover:text-accent  px-2 py-1">Home</a>
               <a href="/rooms" className="transition hover:text-accent px-2 py-1">Rooms</a>
               <a href="/restaurants" className="transition hover:text-accent px-2 py-1">Restaurants</a>
               <a href="/contact" className="transition hover:text-accent px-2 py-1">Contact</a>

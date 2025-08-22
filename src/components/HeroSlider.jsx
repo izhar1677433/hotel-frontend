@@ -142,7 +142,7 @@ const slides = [
 
 const HeroSlider = () => {
   return (
-    <section className="hero font-serif">
+  <section className="font-serif  w-full pt-[85px]  h-screen">
       <Swiper
         modules={[EffectFade, Autoplay]}
         effect={"fade"}
@@ -151,7 +151,7 @@ const HeroSlider = () => {
           delay: 3000,
           disableOnInteraction: false,
         }}
-        className="heroSlider h-[320px] sm:h-[400px] md:h-[600px] lg:h-[860px] "
+        className="heroSlider  h-[320px] sm:h-[400px] md:h-[600px] lg:h-[860px]"
       >
         {slides.map((slide, index) => {
           // destructure slide
@@ -159,18 +159,18 @@ const HeroSlider = () => {
 
           return (
             <SwiperSlide
-              className="relative flex h-full items-center justify-center bg-pink-200 "
+              className="relative flex  h-full items-center justify-center bg-transparent "
               key={index}
             >
               {/* hero data */}
-              <div className="container z-20 mx-auto text-center text-white px-2 sm:px-8">
+              <div className="z-20 w-full text-center text-white px-2 sm:px-8">
                 <div className="mb-5 font-tertiary uppercase tracking-[4px] text-xs sm:text-base md:text-lg">
                   Just Enjoy & Relax
                 </div>
                 <h1 className="font-sans mx-auto mb-6 max-w-[920px] font-primary text-[24px] sm:text-[32px] md:text-[48px] lg:text-[68px] uppercase tracking-[2px] leading-tight">
                   {title}
                 </h1>
-                <button className="btn btn-primary btn-lg bg-blue-500 mx-auto text-xs sm:text-base px-4 sm:px-8 py-2 sm:py-3">
+                <button className="btn btn-primary btn-lg bg-blue-500 mx-auto rounded-lg text-xs sm:text-base px-4 sm:px-8 py-2 sm:py-3">
                   <a href="https://app.lapentor.com/sphere/virtual-tour-to-the-hotal">{btnText}</a>
                 </button>
               </div>
@@ -180,7 +180,7 @@ const HeroSlider = () => {
                 <img
                   src={background}
                   alt="hero slide image"
-                  className="h-full w-full object-cover object-center"
+                  className="h-full w-full object-"
                 />
               </div>
 

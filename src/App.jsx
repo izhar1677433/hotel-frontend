@@ -32,13 +32,13 @@ import Adminlogin from "./components/Adminlogin";
 // Layout component that includes Header, Footer, and PageLayout
 const Layout = () => {
   return (
-    <>
+    <div className="flex flex-col min-h-screen  overflow-hidden">
       <Header />
       <PageLayout>
         <Outlet />
       </PageLayout>
       <Footer />
-    </>
+    </div>
   );
 };
 

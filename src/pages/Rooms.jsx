@@ -26,7 +26,7 @@ const Rooms = () => {
   fetchRooms()
   }, [])
   return (
-    <section className="rooms pt-[130px]">
+    <section className="rooms pt-[130px] ">
       {/* overlay & spinner loader */}
       {loading && (
         <div className="fixed top-0 left-0 z-50 flex h-screen w-full items-center justify-center bg-black/90">

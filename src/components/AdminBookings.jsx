@@ -221,10 +221,9 @@ export default function AdminBookings() {
   return (
     <div>
       <div className="mb-6">
-        <h2 className="text-2xl font-bold text-gray-700 mb-4">Booking Management</h2>
-        
+        <h2 className="text-xl sm:text-2xl font-bold text-gray-700 mb-4 text-center">Booking Management</h2>
         {/* Stats Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-4 mb-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-6">
           <div className="bg-white p-4 rounded-lg shadow border-l-4 border-blue-500">
             <div className="flex items-center">
               <FaIcons.FaCalendarAlt className="text-blue-500 text-2xl mr-3" />
@@ -288,40 +287,37 @@ export default function AdminBookings() {
         </div>
 
         {/* Filters and Search */}
-        <div className="flex flex-col md:flex-row gap-4 mb-6">
+  <div className="flex flex-col md:flex-row gap-2 sm:gap-4 mb-6">
           <div className="flex-1">
             <input
               type="text"
               placeholder="Search by guest name, room number, or email..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full px-2 py-2 sm:px-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
             />
           </div>
-          
-          <div className="flex gap-2">
+          <div className="flex flex-col sm:flex-row gap-2 w-full sm:w-auto">
             <select
               value={filter}
               onChange={(e) => setFilter(e.target.value)}
-              className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="px-2 py-2 sm:px-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
             >
               <option value="all">All Bookings</option>
               <option value="pending">Pending Payment</option>
               <option value="paid">Confirmed</option>
               <option value="failed">Failed</option>
             </select>
-            
             <button
               onClick={fetchBookings}
-              className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
+              className="px-2 py-2 sm:px-4 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors text-sm"
             >
               <FaIcons.FaSyncAlt className="inline mr-2" />
               Refresh
             </button>
-            
             <button
               onClick={exportBookings}
-              className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors"
+              className="px-2 py-2 sm:px-4 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors text-sm"
             >
               <FaIcons.FaDownload className="inline mr-2" />
               Export CSV
@@ -331,24 +327,24 @@ export default function AdminBookings() {
       </div>
 
       {/* Bookings Table */}
-      <div className="bg-white rounded-lg shadow overflow-hidden">
+      <div className="bg-white rounded-lg shadow overflow-hidden mt-4">
         <div className="overflow-x-auto">
-          <table className="w-full">
+          <table className="w-full text-xs sm:text-sm">
             <thead className="bg-gray-50">
               <tr>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th className="px-2 sm:px-4 py-2 text-left font-medium text-gray-500 uppercase tracking-wider">
                   Guest Details
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th className="px-2 sm:px-4 py-2 text-left font-medium text-gray-500 uppercase tracking-wider">
                   Room & Dates
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th className="px-2 sm:px-4 py-2 text-left font-medium text-gray-500 uppercase tracking-wider">
                   Payment Status
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th className="px-2 sm:px-4 py-2 text-left font-medium text-gray-500 uppercase tracking-wider">
                   Amount
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th className="px-2 sm:px-4 py-2 text-left font-medium text-gray-500 uppercase tracking-wider">
                   Actions
                 </th>
               </tr>
@@ -356,43 +352,41 @@ export default function AdminBookings() {
             <tbody className="bg-white divide-y divide-gray-200">
               {filteredBookings.map((booking) => (
                 <tr key={booking._id} className="hover:bg-gray-50">
-                  <td className="px-6 py-4">
+                  <td className="px-2 sm:px-4 py-2">
                     <div>
-                      <div className="text-sm font-medium text-gray-900">
+                      <div className="text-xs sm:text-sm font-medium text-gray-900">
                         {booking.guestName}
                       </div>
                       {booking.email && (
-                        <div className="text-sm text-gray-500">{booking.email}</div>
+                        <div className="text-xs sm:text-sm text-gray-500">{booking.email}</div>
                       )}
                       {booking.phone && (
-                        <div className="text-sm text-gray-500">{booking.phone}</div>
+                        <div className="text-xs sm:text-sm text-gray-500">{booking.phone}</div>
                       )}
                       {booking.guests && (
-                        <div className="text-sm text-gray-500">
+                        <div className="text-xs sm:text-sm text-gray-500">
                           {booking.guests} guest{booking.guests > 1 ? 's' : ''}
                         </div>
                       )}
                     </div>
                   </td>
-                  
-                  <td className="px-6 py-4">
+                  <td className="px-2 sm:px-4 py-2">
                     <div>
-                      <div className="text-sm font-medium text-gray-900">
+                      <div className="text-xs sm:text-sm font-medium text-gray-900">
                         {booking.roomName || `Room ${booking.roomNumber}`}
                       </div>
-                      <div className="text-sm text-gray-500">
+                      <div className="text-xs sm:text-sm text-gray-500">
                         Room {booking.roomNumber}
                       </div>
-                      <div className="text-sm text-gray-500">
+                      <div className="text-xs sm:text-sm text-gray-500">
                         {formatDate(booking.checkIn)} - {formatDate(booking.checkOut)}
                       </div>
-                      <div className="text-xs text-gray-400">
+                      <div className="text-[10px] sm:text-xs text-gray-400">
                         Booked: {formatDate(booking.createdAt)}
                       </div>
                     </div>
                   </td>
-                  
-                  <td className="px-6 py-4">
+                  <td className="px-2 sm:px-4 py-2">
                     <div className="flex items-center">
                       {getStatusIcon(booking.paymentStatus)}
                       {getStatusBadge(booking.paymentStatus)}
